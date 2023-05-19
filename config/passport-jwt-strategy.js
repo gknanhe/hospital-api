@@ -4,7 +4,7 @@ const JWTStrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;   //to extract req data
 
 const Doctor = require('../models/doctor');
-
+console.log(process.env.jwtKey,'jwtkey')
 //setting up option fot passport
 let opts = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
