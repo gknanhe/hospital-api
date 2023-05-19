@@ -70,7 +70,7 @@ module.exports.createReport = async  function(req, res){
     }
 }
 
-
+//get all reports
 module.exports.reportsOfPatient = async function(req, res){
     try {
         let reports = await Report.find({patient: req.params.id});
