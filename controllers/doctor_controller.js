@@ -56,7 +56,7 @@ module.exports.login = async function(req, res){
         if(user){
             return res.status(200).send({
                 isAuthenticated: true,
-                token: jwt.sign(user.toJSON(), process.env.jwtKey, { expiresIn: '100000' }),  //conver user to obj and encript by key and generat token
+                token: jwt.sign(user.toJSON(), process.env.jwtKey, { expiresIn: '1h' }),  //conver user to obj and encript by key and generat token
             })
         }else{
             return res.status(422).send({

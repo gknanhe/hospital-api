@@ -71,3 +71,22 @@ module.exports.createReport = async  function(req, res){
 }
 
 
+module.exports.reportsOfPatient = async function(req, res){
+    try {
+        let reports = await Report.find({patient: req.params.id});
+
+        if(reports){
+            return res.status(200).send({
+                reports: reports,
+                message: "all reports of patient"
+            })
+        }
+
+
+    } catch (error) {
+        console.log('Internal Server Error',error);
+        return res.status(500).send({
+            message: 'Internal Server Error',
+        });
+    }
+}
