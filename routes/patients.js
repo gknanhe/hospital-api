@@ -8,7 +8,7 @@ router.post('/register', passport.authenticate('jwt', {session: false}), patient
 
 router.post('/:id/create_report', passport.authenticate('jwt', {session: false}), patientController.createReport);
 
-router.post('/:id/all_reports', passport.authenticate('jwt', {session: false}), patientController.reportsOfPatient);
+router.get('/:id/all_reports', passport.authenticate('jwt', {session: false}), patientController.reportsOfPatient);
 
 
 
